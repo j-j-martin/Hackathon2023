@@ -5,6 +5,6 @@
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "moodle_logo_bright.png"
+    "default_icon": "icons/moodle_logo_bright.png"
   }
 }
