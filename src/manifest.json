@@ -9,10 +9,12 @@
   },
   "content_scripts": [
     {
-      "js": [ "scripts/content.js" ],
-      "matches": [
-        "https://moodle.itech-bs14.de/enrol/*"
-      ]
+      "js": ["scripts/enrollmentKey.js"],
+      "matches": ["https://moodle.itech-bs14.de/enrol/*"]
+    },
+    {
+      "js": ["scripts/favorize.js"],
+      "matches": ["https://moodle.itech-bs14.de/*"]
     }
   ]
 }
