@@ -15,6 +15,10 @@
     {
       "js": ["scripts/favorize.js"],
       "matches": ["https://moodle.itech-bs14.de/*"]
+    },
+    {
+      "js": ["scripts/linkChecker.js"],
+      "matches": ["https://moodle.itech-bs14.de/*"]
     }
   ]
 }
