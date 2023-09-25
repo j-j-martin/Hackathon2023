@@ -1,10 +1,11 @@
 function autoFillTextField() {
-  const textField = document.getElementById('enrolpassword_5270'); // Ersetzen Sie durch die ID des Textfelds
-  const predefinedText = 'get (user_id course_id)'; // Ersetzen Sie durch den vordefinierten Text
+  const textField = document.getElementsByName('enrolpassword');
+  const predefinedText = 'get (user_id course_id)';
+  console.log(textField);
 
-  if (textField) {
+  textField.forEach((textField) => {
     textField.value = predefinedText;
-  }
+  });
 }
 
 window.addEventListener('load', autoFillTextField);
