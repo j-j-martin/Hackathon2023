@@ -7,6 +7,13 @@
     "default_popup": "index.html",
     "default_icon": "icons/moodle_logo_bright.png"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/star.png", "icons/star_filled.png"],
+      "matches": ["https://moodle.itech-bs14.de/*"]
+    }
+  ],
+
   "content_scripts": [
     {
       "js": ["scripts/enrollmentKey.js"],
@@ -20,5 +27,6 @@
       "js": ["scripts/linkChecker.js"],
       "matches": ["https://moodle.itech-bs14.de/*"]
     }
-  ]
+  ],
+  "permissions": ["storage", "activeTab", "tabs"]
 }

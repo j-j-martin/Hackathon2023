@@ -1,0 +1,90 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: fit-content;
+  margin-top: 10;
+  margin-left: 10;
+  margin-right: 10;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  color: #333333;
+}
+
+p {
+  color: #555555;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555555;
+}
+
+button,
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #bebebe;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover,
+input:hover {
+  transform: translateY(-1px);
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 17px;
+  width: 17px;
+  left: 3px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input[type='checkbox']:checked + .slider {
+  background-color: rgb(64, 64, 226);
+}
+
+input[type='checkbox']:checked + .slider:before {
+  transform: translateX(17px);
+}
