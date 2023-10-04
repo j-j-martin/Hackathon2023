@@ -1,11 +1,11 @@
-const mainRegion = document.getElementById('region-main');
+const main = document.getElementById('region-main');
 
-if (mainRegion) {
+if (main) {
   chrome.storage.local.clear();
   chrome.storage.local.set({ moodleLinks: [] });
   const images = [];
   const links = [];
-  const selectedElements = mainRegion.querySelectorAll('.activity.activity-wrapper:not(.label)');
+  const selectedElements = main.querySelectorAll('.activity.activity-wrapper:not(.label)');
   console.log(chrome.storage);
   if (selectedElements.length > 0) {
     let link = '';
