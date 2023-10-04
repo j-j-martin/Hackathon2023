@@ -1,6 +1,47 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>TEST2</h1>
+  <head>
+    <title>Moodledoodle</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <div class="container">
+      <h1>BETTERMOODLE</h1>
+      <div style="display: flex">
+        <label for="enrollmentkey" style="margin-right: 20px"
+          >Autofill Enrollment key</label
+        >
+        <label class="switch" style="display: flex">
+          <input type="checkbox" id="switchToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div>
+        <div style="display: flex">
+        <label for="enrollmentkey" style="margin-right: 70px"
+          >Link Checker</label
+        >
+        <label class="switch" style="display: flex">
+          <input type="checkbox" id="switchToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <input
+        type="text"
+        id="enrollmentkeyinput"
+        name="enrollmentkey"
+        placeholder="Enter enrollment key"
+      />
+      <div id="displayPredefinedText"></div>
+      <button class='button' id="saveButton">save</button>
+    </div>
   </body>
 
   <script src="./index.js" type="module"></script>

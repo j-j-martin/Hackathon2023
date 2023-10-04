@@ -13,6 +13,7 @@
       "matches": ["https://moodle.itech-bs14.de/*"]
     }
   ],
+
   "content_scripts": [
     {
       "js": ["scripts/enrollmentKey.js"],
