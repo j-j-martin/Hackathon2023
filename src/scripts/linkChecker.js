@@ -1,4 +1,8 @@
-// Function to resolve a URL and capture the final destination URL
+/**
+ * This method checks all given URLs and returns the final URL that is reached after all redirects.
+ * @param url the URL to check
+ * @param callback the callback function that is called after the final URL is found
+ */
 function resolveURL(url, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open("HEAD", url, true);
@@ -10,11 +14,12 @@ function resolveURL(url, callback) {
     };
     xhr.send();
 }
-
-
+// Get the main region of the page.
 const mainRegion = document.getElementById('region-main');
 
-
+/**
+ * This method takes the final URLs and adds a label to the corresponding activity.
+ */
 if (mainRegion) {
     const selectedElements = mainRegion.querySelectorAll('.activity.activity-wrapper:not(.label)');
     if (selectedElements.length > 0) {
@@ -24,26 +29,29 @@ if (mainRegion) {
 
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                const instancename = link.querySelector('.instancename');
+                let instanceName = link.querySelector('.instancename');
 
                 resolveURL(href, finalURL => {
                     console.log(`Original URL: ${href}`);
                     console.log(`Final URL: ${finalURL}`);
 
+                    if (finalURL.includes("https://moodle.itech-bs14.de/mod/url")) {
+                        //catch other moodle links that currently dont work
+                    }
                     if (finalURL.endsWith('.pdf')) {
-                        instancename.textContent += ' (PDF)';
+                        instanceName.textContent += ' (PDF)';
                     }
                     else if (finalURL.endsWith(".pptx")) {
-                        instancename.textContent += ' (PowerPoint)';
+                        instanceName.textContent += ' (PowerPoint)';
                     }
                     else if (finalURL.endsWith(".docx")) {
-                        instancename.textContent += ' (Word)';
+                        instanceName.textContent += ' (Word)';
                     }
                     else if (finalURL.endsWith(".xlsx")) {
-                        instancename.textContent += ' (Excel)';
+                        instanceName.textContent += ' (Excel)';
                     }
                     else if (finalURL.endsWith(".zip")) {
-                        instancename.textContent += ' (ZIP)';
+                        instanceName.textContent += ' (ZIP)';
                     }
                 });
             });
@@ -55,4 +63,3 @@ if (mainRegion) {
 } else {
     console.log('Das Element mit der ID "region-main" wurde nicht gefunden.');
 }
-
