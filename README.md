@@ -8,4 +8,12 @@ To define our problem, we used several design thinking methods. First, we delevo
 
 We then examined our problem using a **problem tree**. You can find it in the folder **ideate**.
 
+The next step was, to find a solution to our problem that would be implementable within our school block. After some consideration, we agreed on developing a **Google Chrome extension** with the aim of improving Moodle. The basic functions of this extension are:
+
+- Autofilling of the enrollment key
+- Marking the type of links within a course
+- The ability to favorite and save individual links.
+
+Our first prototype can be found in the **"src"** folder.
+
 TODO: Add reflection to learning goals (end of block)
