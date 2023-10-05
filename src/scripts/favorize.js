@@ -1,8 +1,6 @@
 const main = document.getElementById('region-main');
 
 if (main) {
-  chrome.storage.local.clear();
-  chrome.storage.local.set({ moodleLinks: [] });
   const images = [];
   const links = [];
   const selectedElements = main.querySelectorAll('.activity.activity-wrapper:not(.label)');
@@ -18,7 +16,15 @@ if (main) {
       }
       let img = images[index];
       img = document.createElement('img');
-      img.src = chrome.runtime.getURL('icons/star.png');
+
+      chrome.storage.local.get(['moodleLinks'], function (result) {
+        let moodleLinks = result.moodleLinks || [];
+        if (moodleLinks.includes(links[index])) {
+          img.src = chrome.runtime.getURL('icons/star_filled.png');
+        } else {
+          img.src = chrome.runtime.getURL('icons/star.png');
+        }
+      });
 
       img.addEventListener('click', function () {
         if (img.src === chrome.runtime.getURL('icons/star.png')) {
