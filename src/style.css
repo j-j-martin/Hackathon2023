@@ -1,13 +1,22 @@
 body {
   font-family: 'Roboto', sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
   width: fit-content;
   margin-top: 10;
   margin-left: 10;
   margin-right: 10;
+  width: 190px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .container {

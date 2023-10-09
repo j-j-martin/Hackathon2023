@@ -6,6 +6,7 @@ chrome.storage.local.get(['moodleLinks'], function (result) {
   }
   moodleLinks.forEach((link) => {
     const a = document.createElement('a');
+    a.className = 'links';
     const linkTextNode = document.createTextNode(link);
     a.appendChild(linkTextNode);
     a.href = link;
