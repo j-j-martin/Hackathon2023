@@ -9,10 +9,11 @@ if (main) {
     let link = '';
     selectedElements.forEach((element, index) => {
       link = element.querySelector('a');
+      const activityName = element.querySelector('div.activity-item').dataset.activityname;
       if (link) {
-        links[index] = link.href;
+        links[index] = [link.href, activityName];
       } else {
-        links[index] = '';
+        links[index] = [];
       }
       let img = images[index];
       img = document.createElement('img');
@@ -36,9 +37,6 @@ if (main) {
         }
       });
       element.firstElementChild.firstElementChild.firstElementChild.prepend(img);
-      console.log(img.src);
-      console.log(`Element ${index + 1}:`, element);
-      console.log(`Element ${index + 1}:`, link);
     });
   } else {
     console.log('Keine passenden Elemente gefunden.');

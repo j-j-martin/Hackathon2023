@@ -7,12 +7,13 @@ chrome.storage.local.get(['moodleLinks'], function (result) {
   moodleLinks.forEach((link) => {
     const a = document.createElement('a');
     a.className = 'links';
-    const linkTextNode = document.createTextNode(link);
+    const linkTextNode = document.createTextNode(link[1]);
+    console.log[link[1]];
     a.appendChild(linkTextNode);
-    a.href = link;
+    a.href = link[0];
     a.addEventListener('click', (event) => {
       event.preventDefault();
-      chrome.tabs.create({ url: link });
+      chrome.tabs.create({ url: link[0] });
     });
     const div = document.createElement('div');
     div.appendChild(a);
